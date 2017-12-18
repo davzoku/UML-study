@@ -1,0 +1,35 @@
+@startuml
+title Use Case Diagram
+
+actor :User: as U
+actor :Web Master: as W
+actor :Generic Payment System: as P
+
+
+left to right direction
+skinparam monochrome true
+skinparam packageStyle rectangle
+rectangle (Partystarter){
+
+    U -- (Login)
+    U -- (Create Party)
+    (Create Party) .> (View Guestlist) : include
+    (Create Party) .> (Cancel Party) : include
+    U -- (Join a Party)
+    (Join a Party) .>  (Make Payment) : include
+    (Make Payment) -- P
+    (Join a Party) .> (Withdraw) : include
+    (View other Partygoers) .> (Join a Party) : extends
+    (Join a Party) .> (Check Vacancies) : includes
+    U -- (Browse Party Listing)
+
+    (Manage Users) -- W
+    (Manage Parties) -- W
+    (Manage Parties) .> (Cancel Party) : include
+    note right of (Manage Parties)
+        Web Master can delete inappropriate listing
+    end note
+
+}
+
+@enduml

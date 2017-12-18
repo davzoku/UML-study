@@ -1,0 +1,21 @@
+@startuml
+title Use Case Diagram
+
+actor :User: as U
+actor :Tutor: as T
+actor : Examinator: as E
+
+left to right direction
+skinparam monochrome true
+skinparam packageStyle rectangle
+rectangle (Quiz-System){
+
+    U -- (Make a Quiz)
+    (Make a Quiz) .> (Report Result) : include
+    (Provide hint) .> (Make a Quiz) : extends
+    (Add Questions) -- T
+    (Certify Questions) -- E
+    (Add Questions) .> (Certify Questions) : include
+}
+
+@enduml
