@@ -33,6 +33,124 @@ shows dynamic behavior
 
 ### S: Class Diagram
 
+#### Class:
++ Top section= **attributes** describe the variables
++ Bottom section = **methods()** describe how a class can interact with data.
+
+#### Visibility:
++ Public (+)
++ Private (-)
++ Protected (#)
++ Package (~)
++ Derived (/)
++ Static (underlined)
+
+#### Relationships
+--|> inheritance = parent-child relationship; "is a" relationship (eg. a manager (is a) type of employee)
+
+-- / --> bidirectional / unidirectional association
+
+--o Aggregation = "has a" relationship; more specific than association
+
+Aggregation implies a relationship where the child can exist independently of the parent. Example: Class (parent) and Student (child). Delete the Class and the Students still exist.
+
+--* Composition
+
+Composition implies a relationship where the **child cannot exist independent of the parent**. Example: House (parent) and Room (child). Rooms don't exist separate to a House.
+
+
+![](/class_onlineshopping.png)
+```
+@startuml
+
+title Online Shopping
+skinparam monochrome true
+skinparam classAttributeIconSize 0
+
+
+class Customer {
+ -customerName : string
+ -address: string
+ -email: string
+ -creditCardinfo: string
+ -shippingInfo: string
+
+ +register()
+ +login()
+ +updateProfile()
+
+}
+
+class User {
+ -userId: string
+ -password: string
+ -loginStatus: string
+
+ +verifyLogin(): boolean
+}
+class Admin {
+ -adminName: string
+ -email: string
+
+ +updateCatalog(): boolean
+}
+
+class OrderDetails {
+ -orderId: integer
+ -productId: integer
+ -productName: string
+ -quantity: integer
+ -unitCost: float
+ -subtotal: float
+
+ +calPrice()
+}
+
+class ShippingInfo {
+ -shippingId: integer
+ -shippingType: string
+ -shippingCost: integer
+ -shippingRegionId: integer
+
+ +updateShippingInfo()
+
+}
+
+class Orders {
+ -orderId: integer
+ -dateCreated: string
+ -dateShipped: string
+ -customerName: string
+ -customerId: string
+ -status: string
+ -shippingId: string
+
+ +placeOrder()
+}
+
+class ShoppingCart {
+ -cartId: integer
+ -productId: integer
+ -quantity: integer
+ -dateAdded: integer
+
+ +addCartItem()
+ +updateQuantity()
+ +viewCartDetails()
+ +checkOut()
+}
+
+Customer --|> User
+Admin --|> User
+OrderDetails "1" --* "1" Orders
+Orders "0..*" --* "1" Customer
+ShippingInfo "1" --* "1" Orders
+ShoppingCart "0..*" --* "1" Customer
+
+@enduml
+```
+
+
 ### B: Activity Diagram
 
 ### B: Sequence Diagram
@@ -145,6 +263,42 @@ rectangle (Partystarter){
 ![alt text]( /usecase_partystarter.png "Partystarter")
 
 [More Examples](https://www.lucidchart.com/pages/uml/use-case-diagram)
+
+## Bonus! Gantt Chart with PlantUML
+From this, using PlantUML:
+![alt text]( /sample-gantt-chart.png "From the web")
+to this:
+![alt text]( /plantuml_gantt.png "PlantUML Generated")
+```
+@startgantt
+' Sample content from https://d33wubrfki0l68.cloudfront.net/85975663ee3d10baa062c8406db6c5f10627a601/0a978/images/chart-title.png
+Project starts on 23 July 2016
+[Task 1] as [1] lasts 5 days
+[Task 2] as [2] lasts 6 days and starts 1 day after [1]'s start
+[Task 3] as [3] lasts 9 days and starts 1 day after [1]'s start
+[Task 4] as [4] lasts 11 days and starts 1 day after [1]'s start
+[Phase 1 completed] happens at [4]'s end
+[Task 5] as [5] lasts 11 days and starts 4 days after [4]'s start
+[Task 6] as [6] lasts 6 days and starts 4 days after [4]'s start
+[Task 7] as [7] lasts 13 days and starts 3 days after [6]'s start
+[Phase 2 completed] happens at [7]'s end
+[Task 8] as [8] lasts 10 days and starts 4 days after [7]'s start
+[Task 9] as [9] lasts 5 days and starts 4 days after [7]'s start
+[Phase 3 completed] happens at [8]'s end
+
+[1] is colored in LightBlue
+[2] is colored in LightBlue
+[3] is colored in LightBlue
+[4] is colored in LightBlue
+[5] is colored in Teal
+[6] is colored in Teal
+[7] is colored in Teal
+[8] is colored in Orchid
+[9] is colored in Orchid
+@endgantt
+```
+*I guess I will stick with excel sheets for gantt charts for now*
+
 
 ## Useful Resources/ References:
 + [Tutorialspoint: UML](https://www.tutorialspoint.com/uml/)

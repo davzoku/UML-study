@@ -1,0 +1,89 @@
+@startuml
+
+title Online Shopping
+skinparam monochrome true
+skinparam classAttributeIconSize 0
+
+
+class Customer {
+ -customerName : string
+ -address: string
+ -email: string
+ -creditCardinfo: string
+ -shippingInfo: string
+
+ +register()
+ +login()
+ +updateProfile()
+
+}
+
+class User {
+ -userId: string
+ -password: string
+ -loginStatus: string
+
+ +verifyLogin(): boolean
+}
+class Admin {
+ -adminName: string
+ -email: string
+
+ +updateCatalog(): boolean
+}
+
+class OrderDetails {
+ -orderId: integer
+ -productId: integer
+ -productName: string
+ -quantity: integer
+ -unitCost: float
+ -subtotal: float
+
+ +calPrice()
+}
+
+class ShippingInfo {
+ -shippingId: integer
+ -shippingType: string
+ -shippingCost: integer
+ -shippingRegionId: integer
+
+ +updateShippingInfo()
+
+}
+
+class Orders {
+ -orderId: integer
+ -dateCreated: string
+ -dateShipped: string
+ -customerName: string
+ -customerId: string
+ -status: string
+ -shippingId: string
+
+ +placeOrder()
+}
+
+class ShoppingCart {
+ -cartId: integer
+ -productId: integer
+ -quantity: integer
+ -dateAdded: integer
+
+ +addCartItem()
+ +updateQuantity()
+ +viewCartDetails()
+ +checkOut()
+}
+
+Customer --|> User
+Admin --|> User
+OrderDetails "1" --* "1" Orders
+Orders "0..*" --* "1" Customer
+ShippingInfo "1" --* "1" Orders
+ShoppingCart "0..*" --* "1" Customer
+
+
+
+@enduml
