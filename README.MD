@@ -42,7 +42,7 @@ shows dynamic behavior
 + Use Case: Function within the system
 + System: Define the scope of the use case
 ---
-+ [include vs extends](https://stackoverflow.com/questions/1696927/whats-is-the-difference-between-include-and-extend-in-use-case-diagram "Stackoverflow Answer")
+#### [include vs extends](https://stackoverflow.com/questions/1696927/whats-is-the-difference-between-include-and-extend-in-use-case-diagram "Stackoverflow Answer")
 
 **Extend** is used when a use case adds steps to another first class use case.
 
@@ -54,7 +54,7 @@ For example, the flow of events that occurs at the beginning of every ATM use ca
 
 ---
 
-Question: "Do you know that it costs a lot of money to get a ’Certified Java Programmer’ certificate? It
+*Question:* "Do you know that it costs a lot of money to get a ’Certified Java Programmer’ certificate? It
 could cost you thousands of euros. Let’s imagine we will develop a browser-based training
 system to help people prepare for such a certification exam.
 
@@ -72,8 +72,9 @@ don’t have real stake holders here, you are free to fill in details you think 
 example.
 
 ![alt text]( /usecase_quizsystem.png "Quiz System")
+Here  is the code:
 
-'''
+```
 @startuml
 title Use Case Diagram
 
@@ -85,7 +86,6 @@ left to right direction
 skinparam monochrome true
 skinparam packageStyle rectangle
 rectangle (Quiz-System){
-
     U -- (Make a Quiz)
     (Make a Quiz) .> (Report Result) : include
     (Provide hint) .> (Make a Quiz) : extends
@@ -95,8 +95,7 @@ rectangle (Quiz-System){
 }
 
 @enduml
-
-'''
+```
 
 Use Case Diagram of Partystarter, a web application project I did for [EE4717 module](https://github.com/xiongchenyu6/web_design) in NTU.
 It is an event management online portal where registered users are able to:
@@ -104,8 +103,7 @@ It is an event management online portal where registered users are able to:
 + browse party listing from database
 + join any existing party
 
-'''
-
+```
 @startuml
 title Use Case Diagram
 
@@ -140,10 +138,9 @@ rectangle (Partystarter){
 }
 
 @enduml
+```
 
-'''
-
-*side note: plantuml looks really messy without formatting :( *
+*side note: plantuml looks really messy without formatting :(*
 
 ![alt text]( /usecase_partystarter.png "Partystarter")
 
