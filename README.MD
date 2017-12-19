@@ -5,6 +5,10 @@ This is part of my self-study to become a better programmer.
 PlantUML is used for quick creation of UML diagrams.
 The [PlantUML Online Editor](https://www.planttext.com/) I use.
 
+*Update: [UMLet](https://github.com/umlet/umlet) is a godsend!*
+
+*Both Activity and Sequence Diagram is done using UMLet while the rest are coded in plantUML. Compare yourself and choose your posion.*
+
 Unified Modeling Language (UML) is a general-purpose, developmental, modeling language in the field of software engineering, that is intended to provide a standard way to visualize the design of a system.
 
 
@@ -31,7 +35,7 @@ shows dynamic behavior
 + Timing diagram
 + Use case diagram*
 
-### S: Class Diagram
+## S: Class Diagram
 
 #### Class:
 + Top section= **attributes** describe the variables
@@ -151,11 +155,21 @@ ShoppingCart "0..*" --* "1" Customer
 ```
 
 
-### B: Activity Diagram
+## B: Activity Diagram
 
-### B: Sequence Diagram
+![](/activity_fblogin.png)
+Adapted from [Creately](https://creately.com/diagram/example/gto0x9981/Facebook+Login+Activity+Diagram)
 
-### B: Use Case Diagram
+## B: Sequence Diagram
+
+![](/sequence_mvc.png)
+The sequence diagram is created in UMLet following the example given by Basher.
+
+"The above sequence diagram starts from User request, when User fires an event on UI. The View sends RequestUpdate message to Controller, passing itself as a parameter. Controller updates Model, calling helper function UpdateModel. After successful updates the Model, Controller notifies the View using NotifyUpdate message, with passing the updated Model as an argument. After notified, the View updates the UI with the updated value and View gets the updated value from Model."
+
+credits to: [Khademul Basher](https://www.codeproject.com/Articles/674959/MVC-Patterns-Active-and-Passive-Model-and-its)
+
+## B: Use Case Diagram
 + Actor: Entity that performs a role
 + Use Case: Function within the system
 + System: Define the scope of the use case
