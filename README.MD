@@ -20,7 +20,7 @@ Unified Modeling Language (UML) is a general-purpose, developmental, modeling la
 ## Structural UML diagrams
 describes the static features of the system
 
-+ [Class diagram*](#s:-class-diagram)
++ [Class diagram*](#s:class-diagram)
 + Component diagram
 + Composite structure diagram
 + Deployment diagram
@@ -40,7 +40,7 @@ shows dynamic behavior
 + Timing diagram
 + Use case diagram*
 
-## S: Class Diagram
+## S:Class Diagram
 
 #### Class:
 + Top section= **attributes** describe the variables
