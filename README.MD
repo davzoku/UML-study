@@ -11,11 +11,16 @@ The [PlantUML Online Editor](https://www.planttext.com/) I use.
 
 Unified Modeling Language (UML) is a general-purpose, developmental, modeling language in the field of software engineering, that is intended to provide a standard way to visualize the design of a system.
 
+## Mindmap
+
+![](/uml_mindmap.png)
+
+**TLDR**
 
 ## Structural UML diagrams
 describes the static features of the system
 
-+ Class diagram*
++ [Class diagram*](#s:-class-diagram)
 + Component diagram
 + Composite structure diagram
 + Deployment diagram
@@ -158,11 +163,14 @@ ShoppingCart "0..*" --* "1" Customer
 ## B: Activity Diagram
 
 ![](/activity_fblogin.png)
+
 Adapted from [Creately](https://creately.com/diagram/example/gto0x9981/Facebook+Login+Activity+Diagram)
 
 ## B: Sequence Diagram
 
 ![](/sequence_mvc.png)
+
+
 The sequence diagram is created in UMLet following the example given by Basher.
 
 "The above sequence diagram starts from User request, when User fires an event on UI. The View sends RequestUpdate message to Controller, passing itself as a parameter. Controller updates Model, calling helper function UpdateModel. After successful updates the Model, Controller notifies the View using NotifyUpdate message, with passing the updated Model as an argument. After notified, the View updates the UI with the updated value and View gets the updated value from Model."
@@ -204,6 +212,7 @@ don’t have real stake holders here, you are free to fill in details you think 
 example.
 
 ![alt text]( /usecase_quizsystem.png "Quiz System")
+
 Here  is the code:
 
 ```
@@ -228,6 +237,8 @@ rectangle (Quiz-System){
 
 @enduml
 ```
+
+![alt text]( /usecase_partystarter.png "Partystarter")
 
 Use Case Diagram of Partystarter, a web application project I did for [EE4717 module](https://github.com/xiongchenyu6/web_design) in NTU.
 It is an event management online portal where registered users are able to:
@@ -273,8 +284,6 @@ rectangle (Partystarter){
 ```
 
 *side note: plantuml looks really messy without formatting :(*
-
-![alt text]( /usecase_partystarter.png "Partystarter")
 
 [More Examples](https://www.lucidchart.com/pages/uml/use-case-diagram)
 
