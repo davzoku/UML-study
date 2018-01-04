@@ -15,12 +15,16 @@ Unified Modeling Language (UML) is a general-purpose, developmental, modeling la
 
 ![](/uml_mindmap.png)
 
-**TLDR**
+**TLDR: When to Use**
++ Use **class diagram** to describe classes and show relationships between class
++ Use **activity diagram** to show flow of __actions__, esp good at conditional structures, loops, concurrency
++ Use **sequence diagram** to show __interactions__ and sequence of messages flowing from object to another and the time-order
++ use **use case diagram** during analysis phase to identify system functionality
 
 ## Structural UML diagrams
 describes the static features of the system
 
-+ [Class diagram*](#s:class-diagram)
++ [Class diagram*](#class-diagram)
 + Component diagram
 + Composite structure diagram
 + Deployment diagram
@@ -32,15 +36,16 @@ describes the static features of the system
 describes the interaction in the system;
 shows dynamic behavior
 
-+ Activity diagram*
++ [Activity diagram*](#activity-diagram)
 + Communication diagram
 + Interaction overview diagram
-+ Sequence diagram*
++ [Sequence diagram*](#sequence-diagram)
 + State diagram
 + Timing diagram
-+ Use case diagram*
++ [Use case diagram*](#use-case-diagram)
 
-## S:Class Diagram
+## Class Diagram
+__Structural__
 
 #### Class:
 + Top section= **attributes** describe the variables
@@ -160,13 +165,22 @@ ShoppingCart "0..*" --* "1" Customer
 ```
 
 
-## B: Activity Diagram
+## Activity Diagram
+__Behavior__
+
++ visually presents a series of actions
 
 ![](/activity_fblogin.png)
 
-Adapted from [Creately](https://creately.com/diagram/example/gto0x9981/Facebook+Login+Activity+Diagram)
+Created in UMLet; adapted from [Creately](https://creately.com/diagram/example/gto0x9981/Facebook+Login+Activity+Diagram)
 
-## B: Sequence Diagram
+**Symbols**
++ a diamond represents a decision symbol
++ a straight, thick line splits a single flow into multiple concurrent flow
++ a hourglass shows a time event
+
+## Sequence Diagram
+__Behavior__
 
 ![](/sequence_mvc.png)
 
@@ -177,10 +191,11 @@ The sequence diagram is created in UMLet following the example given by Basher.
 
 credits to: [Khademul Basher](https://www.codeproject.com/Articles/674959/MVC-Patterns-Active-and-Passive-Model-and-its)
 
-## B: Use Case Diagram
-+ Actor: Entity that performs a role
-+ Use Case: Function within the system
-+ System: Define the scope of the use case
+## Use Case Diagram
+__Behavior__
++ **Actor:** Entity that performs a role
++ **Use Case:** Function within the system
++ **System:** Define the scope of the use case
 ---
 #### [include vs extends](https://stackoverflow.com/questions/1696927/whats-is-the-difference-between-include-and-extend-in-use-case-diagram "Stackoverflow Answer")
 
